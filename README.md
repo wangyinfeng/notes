@@ -8,4 +8,5 @@ notes share from internet
 ##三层交换与路由
 [从硬件上说，三层交换机是通过交换芯片转发数据的，交换芯片是带有三层转发能力的，也就是路由的功能。路由器则是通过CPU转发的，所有的报文的重新计算和转发任务是在CPU的计算下完成的。三层交换使用NP作为转发实现，报文路由通过CPU计算出来之后，下发到NP，后续报文即根据三层转发表进行路由（FIB？）；路由器CPU功能强，计算能力强，可以快速响应路由的变化。路由器转发报文都需要经过CPU实现，报文上送耗时较NP大。](https://www.zhihu.com/question/20843778)
 
-
+##169.254.0.0地址的作用
+[169.254.0.0/16地址是Automatic Private IP Addressing, 用于在使用DHCP获取不到地址的情况下，自动给本机分配的一个随机地址（冲突怎么办？）。由/etc/sysconfig/network NOZEROCONF 配置项控制是否启用](http://serverfault.com/questions/132657/where-route-to-169-254-0-0-comes-from)
