@@ -10,3 +10,6 @@ notes share from internet
 
 ##169.254.0.0地址的作用
 [169.254.0.0/16地址是Automatic Private IP Addressing, 用于在使用DHCP获取不到地址的情况下，自动给本机分配的一个随机地址（冲突怎么办？）。由/etc/sysconfig/network NOZEROCONF 配置项控制是否启用](http://serverfault.com/questions/132657/where-route-to-169-254-0-0-comes-from)
+
+##send-redirect
+当前主机作为一个转发节点的时候，如果设置了send-redirect，当发现有更优的路由配置的时候，则会发送ICMP Redirect报文给对端，通知更新路由。(http://superuser.com/questions/833020/definition-of-send-redirect-in-linux-ipv4-context)
