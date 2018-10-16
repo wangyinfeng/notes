@@ -8,9 +8,9 @@ Lose connection
 ## MTU的作用
 https://en.wikipedia.org/wiki/Maximum_transmission_unit
 
-MTU - the largest size of protocol data unit(PDU) - not include the data link/physical layer header.  
-L2MTU - Ethernet II - IEEE 802.3 define the MTU size is [46-1500]; Jumbo frame can be 9000, not the part of IEEE 802.3, but has fully supported by major vendors; - https://zh.wikipedia.org/wiki/%E5%B7%A8%E5%9E%8B%E5%B8%A7 
-IPMTU - the length is defined by the total length in IP header, maxmize can be 2^16-1-20;
+MTU - the largest size of protocol data unit(PDU) - not include the data link/physical layer header.    
+L2MTU - Ethernet II - IEEE 802.3 define the MTU size is [46-1500]; Jumbo frame can be 9000, not the part of IEEE 802.3, but has fully supported by major vendors; - https://zh.wikipedia.org/wiki/%E5%B7%A8%E5%9E%8B%E5%B8%A7   
+IPMTU - the length is defined by the total length in IP header, maxmize can be 2^16-1-20;  
 MSS - the L4 MTU, TCP use it to define max payload can be sent in a tcp segmentation without fragment.  
 
 why Ethernet II MTU size is 1500 - https://community.cisco.com/t5/other-network-architecture/why-the-mtu-size-is-1500/td-p/105418
@@ -29,6 +29,7 @@ send package
 ```
 
 ## 虚拟化场景有什么特别
+Liunx bridge/OVS interface has it's own MTU configure.
 
 ## 诊断/解决的方法
 Check link MTU：
