@@ -2,7 +2,7 @@ Learn from the issues
 
 # MTU misconfig
 ## MTU misconfig的表现是什么
-Lose connection
+Lose connection  
 
 
 ## MTU的作用
@@ -29,7 +29,8 @@ send package
 ```
 
 ## 虚拟化场景有什么特别
-Liunx bridge/OVS interface has it's own MTU configure.
+Liunx bridge/OVS interface has it's own MTU configuration.  
+需要查看tap，qbr，qvm，ply等interface是否都配置正确
 
 ## 诊断/解决的方法
 Check link MTU：
@@ -43,6 +44,8 @@ ping -M dont -s 90000 202.114.0.248
   want (do PMTU discovery, fragment locally when packet size is large), or dont (do not set DF flag, DF=0).
 
 default is auto - sent small package the DF=1, sent large package the DF=0.
+
+-f for Winodws, not fragment.
 
 # tcpdump -i bond0 -nnvv icmp
 tcpdump: listening on bond0, link-type EN10MB (Ethernet), capture size 65535 bytes
@@ -76,3 +79,13 @@ ping: local error: Message too long, mtu=8888
 
 PMTUD - https://www.cisco.com/c/en/us/support/docs/ip/generic-routing-encapsulation-gre/25885-pmtud-ipfrag.html#anc6
 
+Change MTU  
+```
+ifconfig ${Interface} mtu ${SIZE} up
+
+# vi /etc/sysconfig/network-scripts/ifcfg-eth0
+#add 
+MTU="9000"
+
+# service network restart
+```
